@@ -15,7 +15,7 @@ const variables = {
 function Demo() {
     return (
         <CSSVariables className="css-variables" variables={variables}>
-            CSS Variables
+            <div />
         </CSSVariables>
     );
 }
