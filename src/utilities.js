@@ -43,7 +43,7 @@ export function createVariables({ vars, ...options }) {
     return variables;
 }
 
-export function createCSSVariables(variables) {
+export function createVariablesCSS(variables) {
     if (!Array.isArray(variables)) return createVariables(variables);
 
     let cssVariables = {};
