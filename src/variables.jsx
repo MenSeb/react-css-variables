@@ -1,9 +1,9 @@
 import React, { cloneElement, Children, memo } from 'react';
 import PropTypes from 'prop-types';
 import { propTypesVariables } from '~/types';
-import { createCSSVariables } from '~/utilities';
+import { createVariablesCSS } from '~/utilities';
 
-export function CSSVariables({
+export function VariablesCSS({
     children,
     inject,
     style,
@@ -11,7 +11,7 @@ export function CSSVariables({
     variables,
     ...props
 }) {
-    const cssVariables = createCSSVariables(variables);
+    const cssVariables = createVariablesCSS(variables);
 
     return inject ? (
         Children.map(children, (child) => {
@@ -33,15 +33,15 @@ export function CSSVariables({
     );
 }
 
-export default memo(CSSVariables);
+export default memo(VariablesCSS);
 
-CSSVariables.defaultProps = {
+VariablesCSS.defaultProps = {
     inject: false,
     style: {},
     tag: 'div',
 };
 
-CSSVariables.propTypes = {
+VariablesCSS.propTypes = {
     children: PropTypes.element.isRequired,
     inject: PropTypes.bool,
     style: PropTypes.object,

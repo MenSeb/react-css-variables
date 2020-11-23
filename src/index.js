@@ -1,1 +1,1 @@
-export { default as CSSVariables } from './variables';
+export { default as VariablesCSS } from './variables';
