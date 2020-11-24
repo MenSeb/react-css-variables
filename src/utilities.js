@@ -3,11 +3,11 @@ export function isEmptyString(string) {
 }
 
 export function formatPrefix(data, { prefix = '', separator = '' }) {
-    return isEmptyString(prefix) ? data : `${prefix}${separator}${data}`;
+    return isEmptyString(prefix) ? `${data}` : `${prefix}${separator}${data}`;
 }
 
 export function formatSuffix(data, { separator = '', suffix = '' }) {
-    return isEmptyString(suffix) ? data : `${data}${separator}${suffix}`;
+    return isEmptyString(suffix) ? `${data}` : `${data}${separator}${suffix}`;
 }
 
 export function format(data, options) {
