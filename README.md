@@ -1,5 +1,5 @@
-[logo]: https://github.com/MenSeb/react-css-variables/blob/master/demo/logo.svg "React css-variables"
+[logo]: https://github.com/MenSeb/react-css-variables/blob/master/demo/logo.svg "css-variables"
 
-![React css-variables][logo]
+![css-variables][logo]
 
 # React css-variables
