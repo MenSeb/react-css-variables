@@ -1,3 +1,10 @@
+%flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
 *,
 *::after,
 *::before {
@@ -8,11 +15,81 @@
 }
 
 .css-variables {
+    @extend %flex-center;
+
     height: 100vh;
     width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
     overflow: hidden;
+    perspective: 100vmin;
+}
+
+.cube {
+    @extend %flex-center;
+
+    position: absolute;
+    transform-style: preserve-3d;
+    animation: rotation 10s linear infinite;
+}
+
+.face {
+    $half-height: calc(#{var(--size-height)} / 2);
+    $half-width: calc(#{var(--size-width)} / 2);
+    $half-depth: calc(#{var(--size-depth)} / 2);
+
+    position: absolute;
+    border: var(--size-border) solid var(--color-border);
+
+    &:nth-child(1),
+    &:nth-child(2) {
+        height: var(--size-height);
+        width: var(--size-width);
+    }
+
+    &:nth-child(1) {
+        transform: rotate3d(0, 1, 0, 0deg) translate3d(0, 0, $half-depth);
+    }
+
+    &:nth-child(2) {
+        transform: rotate3d(0, 1, 0, 180deg) translate3d(0, 0, $half-depth);
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+        height: var(--size-height);
+        width: var(--size-depth);
+    }
+
+    &:nth-child(3) {
+        transform: rotate3d(0, 1, 0, 90deg) translate3d(0, 0, $half-width);
+    }
+
+    &:nth-child(4) {
+        transform: rotate3d(0, -1, 0, 90deg) translate3d(0, 0, $half-width);
+    }
+
+    &:nth-child(5),
+    &:nth-child(6) {
+        height: var(--size-depth);
+        width: var(--size-width);
+    }
+
+    &:nth-child(5) {
+        transform: rotate3d(1, 0, 0, 90deg) translate3d(0, 0, $half-height);
+    }
+
+    &:nth-child(6) {
+        transform: rotate3d(-1, 0, 0, 90deg) translate3d(0, 0, $half-height);
+    }
+
+    @for $i from 1 through 6 {
+        &:nth-child(#{$i}) {
+            background: var(--color-face#{$i});
+        }
+    }
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate3d(1, 1, 1, 360deg);
+    }
 }
