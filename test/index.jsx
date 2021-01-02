@@ -1,3 +1,6 @@
+import React from 'react';
+
+export const children = <div />;
 export const data = 'data';
 export const datas = [undefined, null, 1, true, 'string', [], {}, () => {}];
 export const prefix = 'prefix';
