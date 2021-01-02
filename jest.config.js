@@ -1,5 +1,4 @@
 module.exports = {
-    coverageDirectory: 'coverage',
     moduleDirectories: ['node_modules', 'src'],
     setupFiles: ['./jest.setup.js'],
     setupFilesAfterEnv: ['@testing-library/jest-dom/extend-expect'],
