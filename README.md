@@ -37,7 +37,7 @@
 ## Installation
 
 ```bash
-npm i @menseb/react-context-reducer
+npm i @menseb/react-css-variables
 ```
 
 ## How it works
