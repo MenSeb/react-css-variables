@@ -53,7 +53,7 @@ const variables = {
         border: 'FFF',
     },
     prefixValue: '#',
-    prefixVariable: 'color,
+    prefixVariable: 'color',
     separatorVariable: '-',
 };
 
