@@ -1,28 +1,34 @@
 import { format } from './';
 
-export function createValue(value, { sufVal, preVal, sepVal }) {
+export function createValue(
+    value,
+    { suffixValue, prefixValue, separatorValue },
+) {
     return format(value, {
-        prefix: preVal,
-        separator: sepVal,
-        suffix: sufVal,
+        prefix: prefixValue,
+        separator: separatorValue,
+        suffix: suffixValue,
     });
 }
 
-export function createVariable(variable, { sufVar, preVar, sepVar = '-' }) {
+export function createVariable(
+    variable,
+    { suffixVariable, prefixVariable, separatorVariable = '-' },
+) {
     return format(
         format(variable, {
-            prefix: preVar,
-            separator: sepVar,
-            suffix: sufVar,
+            prefix: prefixVariable,
+            separator: separatorVariable,
+            suffix: suffixVariable,
         }),
         { prefix: '--' },
     );
 }
 
-export function createVariables({ vars, ...options }) {
+export function createVariables({ css, ...options }) {
     const variables = {};
 
-    for (const [key, val] of Object.entries(vars)) {
+    for (const [key, val] of Object.entries(css)) {
         variables[createVariable(key, options)] = createValue(val, options);
     }
 

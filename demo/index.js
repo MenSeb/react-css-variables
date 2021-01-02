@@ -4,7 +4,7 @@ import { VariablesCSS } from '../src';
 import './styles.scss';
 
 const CUBE_COLORS = {
-    vars: {
+    css: {
         face1: 'F00',
         face2: '0F0',
         face3: '00F',
@@ -12,30 +12,30 @@ const CUBE_COLORS = {
         face5: 'F0F',
         face6: '0FF',
     },
-    preVal: '#',
-    preVar: 'color',
+    prefixValue: '#',
+    prefixVariable: 'color',
 };
 
 const CUBE_SIZES = {
-    vars: {
+    css: {
         height: 30,
         width: 40,
         depth: 20,
         border: 3,
     },
-    preVar: 'size',
-    sufVal: 'vmin',
+    prefixVariable: 'size',
+    suffixValue: 'vmin',
 };
 
 const THEME_COLORS = {
-    vars: {
+    css: {
         background: '000',
         border: '000',
         text: '000',
         hover: 'F00',
     },
-    preVal: '#',
-    preVar: 'color',
+    prefixValue: '#',
+    prefixVariable: 'color',
 };
 
 function Demo() {

@@ -2,19 +2,19 @@ import { Children, isValidElement } from 'react';
 import PropTypes from 'prop-types';
 
 export const propTypesVariables = PropTypes.shape({
-    vars: PropTypes.objectOf(
+    css: PropTypes.objectOf(
         PropTypes.oneOfType([
             PropTypes.bool,
             PropTypes.number,
             PropTypes.string,
         ]),
     ).isRequired,
-    preVal: PropTypes.string,
-    sepVal: PropTypes.string,
-    sufVal: PropTypes.string,
-    preVaR: PropTypes.string,
-    sepVaR: PropTypes.string,
-    sufVaR: PropTypes.string,
+    prefixValue: PropTypes.string,
+    prefixVariable: PropTypes.string,
+    separatorValue: PropTypes.string,
+    separatorVariable: PropTypes.string,
+    suffixValue: PropTypes.string,
+    suffixVariable: PropTypes.string,
 });
 
 export function errorChildren(component) {
