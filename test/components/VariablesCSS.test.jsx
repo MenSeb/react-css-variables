@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { VariablesCSS } from 'variables';
+import { VariablesCSS } from 'components';
 import { createVariablesCSS } from 'utilities';
 
 const props = {

@@ -1,7 +1,6 @@
 import React, { cloneElement, Children, memo } from 'react';
 import PropTypes from 'prop-types';
-import { propTypesVariables } from './types';
-import { createVariablesCSS } from './utilities';
+import { createVariablesCSS, propTypesVariables } from 'utilities';
 
 export function VariablesCSS({
     children,
