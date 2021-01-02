@@ -15,11 +15,7 @@
         <path id="hyphen" d="M-3 -1 h6 v2 h-6 z" />
     </defs>
 
-    <g fill="#000">
-        <path
-            fill="#FFF"
-            d="M-12 -12 h24 v24 h-24 z"
-        />
+    <g fill="#5fd4f4">
         <text
             font-size="6px"
             font-weight="bold"
