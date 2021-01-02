@@ -1,6 +1,10 @@
 import React, { cloneElement, Children, memo } from 'react';
 import PropTypes from 'prop-types';
-import { createVariablesCSS, propTypesVariables } from 'utilities';
+import {
+    createVariablesCSS,
+    isChildrenInjected,
+    propTypesVariables,
+} from 'utilities';
 
 export function VariablesCSS({
     children,
@@ -13,14 +17,14 @@ export function VariablesCSS({
     const cssVariables = createVariablesCSS(variables);
 
     return inject ? (
-        Children.map(children, (child) => {
-            return cloneElement(child, {
+        Children.only(
+            cloneElement(children, {
                 style: {
-                    ...child.props.style,
+                    ...children.props.style,
                     ...cssVariables,
                 },
-            });
-        })
+            }),
+        )
     ) : (
         <Tag
             {...props}
@@ -41,7 +45,7 @@ VariablesCSS.defaultProps = {
 };
 
 VariablesCSS.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: isChildrenInjected,
     inject: PropTypes.bool,
     style: PropTypes.object,
     tag: PropTypes.string,
