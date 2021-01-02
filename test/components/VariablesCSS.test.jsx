@@ -12,7 +12,7 @@ const props = {
     },
     tag: 'section',
     variables: {
-        vars: {
+        css: {
             boolean: true,
             number: 100,
             string: 'blue',

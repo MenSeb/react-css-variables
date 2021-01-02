@@ -16,24 +16,24 @@ import {
 } from '../';
 
 describe('createValue', () => {
-    it('returns and format data with preVal, sepVal and sufVal', () => {
+    it('returns and format data with prefix, separator and suffix', () => {
         expect(
             createValue(data, {
-                preVal: prefix,
-                sepVal: separator,
-                sufVal: suffix,
+                prefixValue: prefix,
+                separatorValue: separator,
+                suffixValue: suffix,
             }),
         ).toBe(`${prefix}${separator}${data}${separator}${suffix}`);
     });
 });
 
 describe('createVariable', () => {
-    it('returns and format data with "--", preVar, sepVar and sufVar', () => {
+    it('returns and format data with "--", prefix, separator and suffix', () => {
         expect(
             createVariable(data, {
-                preVar: prefix,
-                sepVar: separator,
-                sufVar: suffix,
+                prefixVariable: prefix,
+                separatorVariable: separator,
+                suffixVariable: suffix,
             }),
         ).toBe(`--${prefix}${separator}${data}${separator}${suffix}`);
     });

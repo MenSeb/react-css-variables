@@ -16,18 +16,18 @@ export const styleSizes = {
     '--size-width': '50px',
 };
 export const variablesColors = {
-    vars: {
+    css: {
         light: 'FFF',
         dark: '000',
     },
-    preVar: 'color',
-    preVal: '#',
+    prefixVariable: 'color',
+    prefixValue: '#',
 };
 export const variablesSizes = {
-    vars: {
+    css: {
         height: 100,
         width: 50,
     },
-    preVar: 'size',
-    sufVal: 'px',
+    prefixVariable: 'size',
+    suffixValue: 'px',
 };
