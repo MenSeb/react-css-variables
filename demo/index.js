@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { VariablesCSS } from '../dist';
+import { VariablesCSS } from '../src';
 import './styles.scss';
 
 const CUBE_COLORS = {
