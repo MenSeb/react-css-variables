@@ -1,6 +1,6 @@
 {
   "name": "@menseb/react-css-variables",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "React css-variables",
   "main": "dist/index.js",
   "module": "dist/index.js",
