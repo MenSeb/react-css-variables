@@ -154,7 +154,7 @@ export default function myComponent() {
 - #### Variables Shape
 
 | property | type |
-|-|-|-|-|
+|-|-|
 | css | Object of Boolean, Number or String |
 | prefixValue | String |
 | prefixVariable | String |
