@@ -1,4 +1,4 @@
-import React, { cloneElement, Children, memo } from 'react';
+import React, { cloneElement, Children } from 'react';
 import PropTypes from 'prop-types';
 import {
     createVariablesCSS,
@@ -6,7 +6,7 @@ import {
     propTypesVariables,
 } from 'utilities';
 
-export function VariablesCSS({
+export default function VariablesCSS({
     children,
     inject,
     style,
@@ -35,8 +35,6 @@ export function VariablesCSS({
         </Tag>
     );
 }
-
-export default memo(VariablesCSS);
 
 VariablesCSS.defaultProps = {
     inject: false,
