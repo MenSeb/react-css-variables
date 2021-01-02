@@ -2,13 +2,14 @@
   "name": "@menseb/react-css-variables",
   "version": "1.0.0",
   "description": "React css-variables",
-  "main": "index.js",
-  "module": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "webpack --config webpack.prod.js",
+    "build": "rm -rf ./dist && webpack --config webpack.prod.js",
+    "coverage": "jest --coverage && coveralls < coverage/lcov.info",
     "demo": "webpack --config webpack.dev.js",
     "deploy": "gh-pages -d demo",
     "eslint": "eslint . ",
@@ -16,7 +17,7 @@
     "live": "cross-env BABEL_ENV=production npm run start",
     "predeploy": "webpack --config webpack.dev.js --mode production",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
-    "start": "webpack serve --config webpack.dev.js --hot --open chrome",
+    "start": "webpack serve --config webpack.dev.js --hot --open",
     "test": "jest",
     "watch": "jest --watch"
   },
@@ -26,6 +27,8 @@
   },
   "keywords": [
     "react",
+    "css",
+    "variables",
     "css-variables"
   ],
   "author": "Sébastien Menard",
