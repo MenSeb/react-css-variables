@@ -49,21 +49,26 @@ Example :
 ```javascript
 const variables = {
     css: {
-        background: '000',
-        border: 'FFF',
+        var1: 'val1',
+        var2: 'val2',
     },
-    prefixValue: '#',
-    prefixVariable: 'color',
+    prefixValue: 'preVal,
+    prefixVariable: 'preVar,
+    separatorValue: '_',
     separatorVariable: '-',
+    suffixValue: 'sufVal',
+    suffixVariable: 'sufVar',
 };
 
 // Will results in
 
 {
-    'color-background': '#000',
-    'color-border': '#FFF',
+    '--preVar-var1-sufVar': 'preVal_val1_sufVal',
+    '--preVar-var2-sufVar': 'preVal_val2_sufVal',
 }
 ```
+
+The example above shows formatting using every possible options. You don't have to use them all each time, for example, you could format variables names only. See section below for more comprehensive examples.
 
 ## How to use
 
@@ -82,8 +87,11 @@ export default function myComponent() {
             inject={true}
             variables={
                 css: {
-                   bottom: 10,
-                   top: 10,
+                   xsmall: 5,
+                   small: 7.5,
+                   medium: 10,
+                   large: 12.5,
+                   xlarge: 15,
                 },
                 prefixVariable: 'margin',
                 suffixValue: 'px',
@@ -96,7 +104,7 @@ export default function myComponent() {
 ```
 
 ```html
-<div style="padding: 20px; margin-bottom: 10px; margin-top: 10px;">
+<div style="padding: 20px; --margin-xsmall: 5px; --margin-small: 7.5px; --margin-medium: 10px; --margin-large: 12.5px; --margin-xlarge: 15px;">
 ```
 
 - #### Without injection
@@ -119,8 +127,11 @@ export default function myComponent() {
             tag="section"
             variables={
                 css: {
-                   bottom: 10,
-                   top: 10,
+                   xsmall: 5,
+                   small: 7.5,
+                   medium: 10,
+                   large: 12.5,
+                   xlarge: 15,
                 },
                 prefixVariable: 'margin',
                 suffixValue: 'px',
@@ -135,10 +146,58 @@ export default function myComponent() {
 ```html
 <section
     className="my-className"
-    style="display: flex; margin-bottom: 10px; margin-top: 10px;"
+    style="display: flex; --margin-xsmall: 5px; --margin-small: 7.5px; --margin-medium: 10px; --margin-large: 12.5px; --margin-xlarge: 15px;"
 >
     <div style="padding: 20px;">
 </section>
+```
+
+- #### With multiples sets of css variables
+
+```jsx
+import React from 'react';
+import { VariablesCSS } from '@menseb/react-css-variables';
+
+const cssVariablesMargins = {
+    css: {
+        xsmall: 5,
+        small: 7.5,
+        medium: 10,
+        large: 12.5,
+        xlarge: 15,
+    },
+    prefixVariable: 'margin',
+    suffixValue: 'px',
+};
+
+const cssVariablesColors = {
+    css: {
+        red: 'f46060',
+        orange: 'ff8364',
+        yellow: 'ffb677',
+        green: 'acdeaa',
+        blue: '8ed6ff',
+        indigo: '6886c5',
+        violet: 'cca8e9',
+    },
+    prefixVariable: 'color',
+    prefixValue: '#',
+};
+
+export default function myComponent() {
+    return (
+        <VariablesCSS
+            inject={true}
+            variables={[cssVariablesMargin, cssVariablesColors]}
+        >
+            <div style={'padding': '20px'} />
+        </VariablesCSS>
+    );
+}
+```
+
+```html
+<div style="padding: 20px; --margin-xsmall: 5px; --margin-small: 7.5px; --margin-medium: 10px; --margin-large: 12.5px; --margin-xlarge: 15px; --color-red: #f46060; --color-orange: #ff8364; --color-yellow: #ffb677; --color-green: #acdeaa; --color-blue: #8ed6ff; --color-indigo: #6886c5; --color-violet: #cca8e9;">
 ```
 
 ## PropTypes
