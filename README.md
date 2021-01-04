@@ -29,6 +29,9 @@
 * [Installation](#installation)
 * [How it works](#how-it-works)
 * [How to use](#how-to-use)
+    * [With injection](#with-injection)
+    * [Without injection](#without-injection)
+    * [With multiples sets of css variables](#with-multiples-sets-of-css-variables)
 * [PropTypes](#proptypes)
 * [Scripts](#scripts)
 * [Code of conduct](#code-of-conduct)
@@ -52,8 +55,8 @@ const variables = {
         var1: 'val1',
         var2: 'val2',
     },
-    prefixValue: 'preVal,
-    prefixVariable: 'preVar,
+    prefixValue: 'preVal',
+    prefixVariable: 'preVar',
     separatorValue: '_',
     separatorVariable: '-',
     suffixValue: 'sufVal',
@@ -153,6 +156,8 @@ export default function myComponent() {
 ```
 
 - #### With multiples sets of css variables
+
+You may still use with or without injection. The example below shows multiples sets of css variables with injection.
 
 ```jsx
 import React from 'react';
