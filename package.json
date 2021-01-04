@@ -14,7 +14,6 @@
     "deploy": "gh-pages -d demo",
     "eslint": "eslint . ",
     "lint": "npm run eslint --fix",
-    "live": "cross-env BABEL_ENV=production npm run start",
     "predeploy": "webpack --config webpack.dev.js --mode production",
     "prepublishOnly": "npm run lint && npm run test && npm run build",
     "start": "webpack serve --config webpack.dev.js --hot --open",
