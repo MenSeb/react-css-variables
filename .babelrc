@@ -1,11 +1,4 @@
 {
-    "env": {
-        "production": {
-            "plugins": [
-                "babel-plugin-jsx-remove-data-test-id"
-            ]
-        }
-    },
     "presets": [
         ["@babel/env", { "targets": { "node": "current" } }],
         "@babel/react"
