@@ -37,13 +37,9 @@
     "url": "https://github.com/MenSeb/react-css-variables/issues"
   },
   "homepage": "https://github.com/MenSeb/react-css-variables#readme",
-  "dependencies": {
-    "@babel/runtime": "^7.12.5"
-  },
   "devDependencies": {
     "@babel/cli": "^7.12.8",
     "@babel/core": "^7.12.10",
-    "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@testing-library/jest-dom": "^5.11.8",
