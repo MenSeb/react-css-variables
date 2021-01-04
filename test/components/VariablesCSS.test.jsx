@@ -4,7 +4,8 @@ import { VariablesCSS } from 'components';
 import { createVariablesCSS } from 'utilities';
 
 const props = {
-    children: <div data-testid="children" style={{ color: 'blue' }} />,
+    'aria-label': 'css-variables',
+    children: <section aria-label="children" style={{ color: 'blue' }} />,
     className: 'css-variables',
     inject: true,
     style: {
@@ -21,11 +22,11 @@ const props = {
 };
 
 function getVariables() {
-    return screen.getByTestId('css-variables');
+    return screen.getByRole('region', { name: 'css-variables' });
 }
 
 function getChildren() {
-    return screen.getByTestId('children');
+    return screen.getByRole('region', { name: 'children' });
 }
 
 describe('<VariablesCSS />', () => {

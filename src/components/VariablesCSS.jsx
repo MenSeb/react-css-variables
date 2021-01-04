@@ -26,11 +26,7 @@ export default function VariablesCSS({
             }),
         )
     ) : (
-        <Tag
-            {...props}
-            data-testid="css-variables"
-            style={{ ...style, ...cssVariables }}
-        >
+        <Tag {...props} style={{ ...style, ...cssVariables }}>
             {children}
         </Tag>
     );
