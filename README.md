@@ -100,7 +100,7 @@ export default function myComponent() {
                 suffixValue: 'px',
             }
         >
-            <div style={'padding': '20px'} />
+            <div style={{ padding: '20px' }} />
         </VariablesCSS>
     );
 }
@@ -126,7 +126,7 @@ export default function myComponent() {
         <VariablesCSS
             className="my-className"
             inject={false}
-            style={'display': 'flex'}
+            style={{ display: 'flex' }}
             tag="section"
             variables={
                 css: {
@@ -140,7 +140,7 @@ export default function myComponent() {
                 suffixValue: 'px',
             }
         >
-            <div style={'padding': '20px'} />
+            <div style={{ padding: '20px' }} />
         </VariablesCSS>
     );
 }
@@ -195,7 +195,7 @@ export default function myComponent() {
             inject={true}
             variables={[cssVariablesMargin, cssVariablesColors]}
         >
-            <div style={'padding': '20px'} />
+            <div style={{ padding: '20px' }} />
         </VariablesCSS>
     );
 }
