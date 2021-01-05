@@ -1,4 +1,4 @@
-import React, { cloneElement, Children } from 'react';
+import React, { cloneElement } from 'react';
 import PropTypes from 'prop-types';
 import {
     createVariablesCSS,
@@ -17,14 +17,12 @@ export default function VariablesCSS({
     const cssVariables = createVariablesCSS(variables);
 
     return inject ? (
-        Children.only(
-            cloneElement(children, {
-                style: {
-                    ...children.props.style,
-                    ...cssVariables,
-                },
-            }),
-        )
+        cloneElement(children, {
+            style: {
+                ...children.props.style,
+                ...cssVariables,
+            },
+        })
     ) : (
         <Tag {...props} style={{ ...style, ...cssVariables }}>
             {children}
